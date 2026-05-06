@@ -1,0 +1,12 @@
+{
+  "name": "nur-quran-academy",
+  "version": "1.0.0",
+  "description": "Premium Hero Section for Online Quran Learning",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
