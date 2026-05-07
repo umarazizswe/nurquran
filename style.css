@@ -319,6 +319,143 @@ nav {
     50% { transform: translateY(-20px); }
 }
 
+
+/* --- About Section --- */
+.about {
+    padding: 8rem 0;
+    background: var(--white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.image-stack {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.main-about-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: var(--transition);
+}
+
+.main-about-img:hover {
+    transform: scale(1.05);
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 2rem;
+    right: -2rem;
+    background: var(--accent);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+    text-align: center;
+    z-index: 5;
+    animation: float 6s ease-in-out infinite;
+}
+
+.exp-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    font-family: 'Playfair Display', serif;
+}
+
+.exp-text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.about-content h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    color: var(--primary-dark);
+    margin-bottom: 1.5rem;
+}
+
+.about-content h2 span {
+    color: var(--accent);
+}
+
+.about-content p {
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+}
+
+.section-badge {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(212, 175, 55, 0.1);
+    color: var(--accent);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.values-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.value-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.value-icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background: rgba(6, 78, 59, 0.05);
+    color: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.value-item:hover .value-icon {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.value-text h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-main);
+}
+
+.value-text p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
     .hero-grid {
@@ -346,6 +483,31 @@ nav {
     .card-1 { left: 0; }
     .card-2 { right: 0; }
     .card-3 { left: -5%; bottom: 40%; top: auto; }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+        text-align: center;
+    }
+
+    .about-image {
+        order: 2;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .experience-badge {
+        right: 0;
+    }
+
+    .value-item {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .value-text {
+        text-align: center;
+    }
 }
 
 @media (max-width: 768px) {
