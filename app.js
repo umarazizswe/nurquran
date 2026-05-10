@@ -34,4 +34,42 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     animateEntrance();
+
+    // Currency Switcher Logic
+    const currencyBtns = document.querySelectorAll('.currency-btn');
+    const priceAmounts = document.querySelectorAll('.plan-price .amount');
+    const priceCurrencies = document.querySelectorAll('.plan-price .currency');
+
+    const pricingData = {
+        '$ USD': { symbol: '$', prices: [30, 40, 50, 60] },
+        '£ GBP': { symbol: '£', prices: [25, 32, 42, 50] },
+        '€ EUR': { symbol: '€', prices: [28, 38, 48, 58] },
+        'C$ CAD': { symbol: 'C$', prices: [40, 55, 70, 85] },
+        'A$ AUD': { symbol: 'A$', prices: [45, 60, 75, 90] }
+    };
+
+    currencyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update Active State
+            currencyBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Update Prices
+            const currency = btn.innerText;
+            const data = pricingData[currency];
+            
+            priceCurrencies.forEach(c => c.innerText = data.symbol);
+            priceAmounts.forEach((amount, index) => {
+                // Smooth transition for price change
+                amount.style.opacity = '0';
+                amount.style.transform = 'translateY(-10px)';
+                
+                setTimeout(() => {
+                    amount.innerText = data.prices[index];
+                    amount.style.opacity = '1';
+                    amount.style.transform = 'translateY(0)';
+                }, 200);
+            });
+        });
+    });
 });
